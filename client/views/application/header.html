@@ -2,17 +2,19 @@
 	<header class="navbar">
 		<div class="navbar-inner">
 
-			<a class="brand" href="{{ pathFor 'postsList' }}">Microscope</a>
+			<a class="brand" href="{{ pathFor 'home' }}">Microscope</a>
 
 			<div class="nav-collapse collapse">
+				<ul class="nav">
+				<li class="{{ activeRouteClass 'home' 'newPosts'}}"><a href="{{ pathFor "newPosts" }}">New</a></li>
+				<li class="{{ activeRouteClass 'bestPosts'}}"><a href="{{ pathFor "bestPosts" }}">Best</a></li>
 				{{#if currentUser}}
-					<ul class="nav">
-						<li><a href="{{ pathFor 'newPost' }}">New Post</a></li>
+						<li class="{{ activeRouteClass 'newPost'}}"><a href="{{ pathFor 'newPost' }}">New Post</a></li>
 						<li class="dropdown">
 							{{> notifications }}
 						</li>
-					</ul>
 				{{/if}}
+				</ul>
 				
 				<ul class="nav pull-right">
 					<li>{{> loginButtons }}</li>

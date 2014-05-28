@@ -1,13 +1,15 @@
 <template name="post">
-	<div class="post">
+	<div class="post {{ attributes }}">
+	<a href="#" class="upvote btn {{ upvotedClass }}">&#x25B2;</a>
 		<div class="post-content">
 			<h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
-			<p>Submitted by {{ author }}</p>
-			<a href="{{ pathFor 'postPage'}}">{{ commentsCount }} comments</a>
-		</div>
+			<p>{{ pluralize votes "vote" }}, submitted by {{ author }},
+			<a href="{{ pathFor 'postPage'}}">{{ pluralize commentsCount "comment" }}</a>
 		{{#if ownsPost }}
 			<a href="{{ pathFor 'editPost'}}" class="btn">Edit</a>
 		{{/if}}
+		</p>
+		</div>
 		<a href="{{ pathFor 'postPage' }}" class="discuss btn">Discuss</a>
 	</div>
 </template>

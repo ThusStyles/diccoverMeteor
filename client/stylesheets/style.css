@@ -90,8 +90,7 @@ margin-bottom: 10px;
 text-decoration: none;
 background: rgba(0, 0, 0, 0.1);
 }
-
-.nav li{
-	list-style: none;
-	list-style-type: none;
+.post{
+position:relative;
+transition:all 300ms 0ms ease-in;
 }

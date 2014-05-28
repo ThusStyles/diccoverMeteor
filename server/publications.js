@@ -2,6 +2,10 @@ Meteor.publish('posts', function(options){
 	return Posts.find({}, options);
 });
 
+Meteor.publish('singlePost', function(id){
+	return Posts.find(id);
+});
+
 Meteor.publish('comments', function(id){
 	return Comments.find({postId: id});
 });
