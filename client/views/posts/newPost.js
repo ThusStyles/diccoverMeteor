@@ -60,7 +60,7 @@ Template.newPost.helpers ({
 
 Template.newPost.rendered = function () {
 	Session.set('url', null);
-	Session.set('message', 'defaul message');
+	Session.set('message', 'default message');
 	Session.set('domain', "no-domain.com");
 	Session.set('title', 'blank title');
 
