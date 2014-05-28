@@ -1,0 +1,13 @@
+<template name="post">
+	<div class="post">
+		<div class="post-content">
+			<h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+			<p>Submitted by {{ author }}</p>
+			<a href="{{ pathFor 'postPage'}}">{{ commentsCount }} comments</a>
+		</div>
+		{{#if ownsPost }}
+			<a href="{{ pathFor 'editPost'}}" class="btn">Edit</a>
+		{{/if}}
+		<a href="{{ pathFor 'postPage' }}" class="discuss btn">Discuss</a>
+	</div>
+</template>

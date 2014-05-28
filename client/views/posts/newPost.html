@@ -1,0 +1,49 @@
+<template name="newPost">
+<div class="row-fluid main">
+<div class="span4">
+	<form class="main">
+		<div class="control-group">
+			<label class="control-label" for="url">URL</label>
+			<div class="controls">
+				<input name="url" id="url" type="text" value="" placeholder="Your URL"/>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="title">Title</label>
+			<div class="controls">
+				<input name="title" id="title" type="text" value="" placeholder="Name your post"/>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="message">Message</label>
+			<div class="controls">
+				<textarea name="message" id="message" type="text" value=""></textarea>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				<input type="submit" value="Submit" class="btn btn-primary"/>
+			</div>
+		</div>
+
+	</form>
+	</div>
+	<div class="span8">
+		<h4>Preview</h4>
+
+		<div class="post">
+		<div class="post-content">
+			<h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+			<p>Submitted by {{ author }}</p>
+			<a href="{{ pathFor 'postPage'}}">0 comments</a>
+			<hr>
+			<p>{{ message }}</p>
+		</div>
+	</div>
+
+	</div>
+</div>
+</template>
